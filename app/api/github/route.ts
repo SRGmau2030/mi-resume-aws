@@ -5,10 +5,7 @@ import { getGitHubRepos } from "@/lib/github"
 
 export async function GET(request: Request) {
   try {
-    const { searchParams } = new URL(request.url)
-    const limit = Number.parseInt(searchParams.get("limit") || "6", 10)
-
-    const repos = await getGitHubRepos(limit)
+    const repos = await getGitHubRepos()
 
     return Response.json(repos, {
       headers: {

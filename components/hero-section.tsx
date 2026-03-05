@@ -10,7 +10,7 @@ export function HeroSection() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           {/* Left side - Text content */}
           <div>
-            <p className="text-accent font-semibold mb-2">Hi, I'm Abdi Garoma</p>
+            <p className="text-accent font-semibold mb-2">Hi, I'm Mauricio May</p>
             <h1 className="text-5xl md:text-6xl font-bold mb-6 text-balance">
               Software Engineer | Architect of Innovative Digital Solutions
             </h1>
@@ -23,7 +23,7 @@ export function HeroSection() {
             <div className="flex gap-6 mb-8 flex-wrap">
               <div>
                 <p className="text-muted-foreground text-sm">Location</p>
-                <p className="font-semibold">Addis Ababa, Ethiopia</p>
+                <p className="font-semibold">Mérida, Yucatán</p>
               </div>
               <div>
                 <p className="text-muted-foreground text-sm">Repositories</p>
@@ -52,8 +52,8 @@ export function HeroSection() {
           <div className="flex justify-center">
             <div className="w-64 h-64 rounded-lg overflow-hidden shadow-xl border border-border">
               <Image
-                src="/abdi-profile.jpg"
-                alt="Abdi Garoma"
+                src="/foto_CV.jpg"
+                alt="Mauricio May"
                 width={256}
                 height={256}
                 className="w-full h-full object-cover"

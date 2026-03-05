@@ -1,7 +1,7 @@
 // GitHub API utility to fetch user data and repositories
 // This file handles all GitHub API calls for the portfolio
 
-const GITHUB_USERNAME = "lilhop36"
+const GITHUB_USERNAME = "SRGmau2030"
 const GITHUB_API_BASE = "https://api.github.com"
 
 // Interface for GitHub repository data
@@ -52,31 +52,43 @@ export async function getGitHubUser(): Promise<GitHubUser | null> {
   }
 }
 
+// List of specific repositories to showcase in the portfolio
+const FEATURED_REPOS = [
+  "mi-resume-aws",
+  "kaxanly",
+  "fitclub-412",
+  "dag-store",
+  "dcvs-landing",
+  "salon-laubet",
+]
+
 /**
- * Fetch GitHub repositories sorted by stars
- * @param limit Number of repositories to fetch (default: 6)
+ * Fetch specific featured GitHub repositories
  * @returns Array of GitHub repositories or empty array if fetch fails
  */
-export async function getGitHubRepos(limit = 6): Promise<GitHubRepo[]> {
+export async function getGitHubRepos(): Promise<GitHubRepo[]> {
   try {
-    const response = await fetch(
-      `${GITHUB_API_BASE}/users/${GITHUB_USERNAME}/repos?sort=stars&order=desc&per_page=${limit}`,
-      {
-        headers: {
-          Accept: "application/vnd.github.v3+json",
+    const repoPromises = FEATURED_REPOS.map(async (repoName) => {
+      const response = await fetch(
+        `${GITHUB_API_BASE}/repos/${GITHUB_USERNAME}/${repoName}`,
+        {
+          headers: {
+            Accept: "application/vnd.github.v3+json",
+          },
+          next: { revalidate: 3600 }, // Cache for 1 hour
         },
-        next: { revalidate: 3600 }, // Cache for 1 hour
-      },
-    )
+      )
 
-    if (!response.ok) {
-      console.error("[v0] Failed to fetch GitHub repos:", response.status)
-      return []
-    }
+      if (!response.ok) {
+        console.error(`[v0] Failed to fetch repo ${repoName}:`, response.status)
+        return null
+      }
 
-    const repos = await response.json()
-    // Filter out forked repositories and return only original projects
-    return repos.filter((repo: any) => !repo.fork)
+      return await response.json()
+    })
+
+    const results = await Promise.all(repoPromises)
+    return results.filter((repo): repo is GitHubRepo => repo !== null)
   } catch (error) {
     console.error("[v0] Error fetching GitHub repos:", error)
     return []

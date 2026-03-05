@@ -63,13 +63,13 @@ export function ContactSection() {
         {/* Social Links */}
         <div className="flex gap-6 justify-center mb-12 flex-wrap">
           <a
-            href="mailto:abdigaboma@gmail.com"
+            href="mailto:mauricio20may@gmail.com"
             className="inline-flex items-center gap-2 px-6 py-3 bg-accent text-background rounded-lg hover:bg-accent/90 transition-colors font-medium"
           >
             <Mail size={20} /> Email Me
           </a>
           <a
-            href="https://github.com/lilhop36"
+            href="https://github.com/SRGmau2030"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:border-accent hover:text-accent transition-colors font-medium"
@@ -77,7 +77,7 @@ export function ContactSection() {
             <Github size={20} /> GitHub
           </a>
           <a
-            href="https://linkedin.com/in/abdi"
+            href="https://www.linkedin.com/in/mauricio-may-55b972206"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 border border-border rounded-lg hover:border-accent hover:text-accent transition-colors font-medium"

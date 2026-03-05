@@ -2,22 +2,21 @@
 
 export function TechnologiesSection() {
   const technologies = [
-    "React Native",
-    "Flutter",
-    "Next.js",
     "React",
-    "TypeScript",
-    "Node.js",
-    "Django",
     "Java",
+    "Python",
+    "TypeScript",
+    "JavaScript",
+    "Supabase",
     "Firebase",
-    "MongoDB",
-    "PostgreSQL",
+    "MySQL",
+    "Node.js",
     "Tailwind CSS",
+    "React Native",
   ]
 
   return (
-    <section className="py-20 px-4 bg-background">
+    <section id="about" className="py-20 px-4 bg-background">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold mb-4 text-center">Technologies I Work With</h2>
         <p className="text-muted-foreground text-center mb-12 max-w-2xl mx-auto">

@@ -9,7 +9,7 @@ export function Footer() {
       <div className="max-w-6xl mx-auto">
         <div className="flex flex-col md:flex-row justify-between items-center gap-4">
           {/* Copyright */}
-          <p className="text-muted-foreground text-sm">© {currentYear} Abdi. All rights reserved.</p>
+          <p className="text-muted-foreground text-sm">© {currentYear} Mauricio May. All rights reserved.</p>
 
           {/* Footer Links */}
           <div className="flex gap-6 text-sm">

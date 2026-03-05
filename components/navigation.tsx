@@ -42,7 +42,7 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
             onClick={() => handleNavClick("home")}
             className="text-xl font-bold text-accent hover:opacity-80 transition-opacity"
           >
-            Abdi Garoma
+            Mauricio May
           </button>
 
           {/* Desktop Navigation Menu */}
@@ -51,9 +51,8 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className={`capitalize transition-colors font-medium ${
-                  activeSection === item ? "text-accent" : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`capitalize transition-colors font-medium ${activeSection === item ? "text-accent" : "text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 {item}
               </button>
@@ -89,9 +88,8 @@ export function Navigation({ activeSection, onSectionChange }: NavigationProps) 
               <button
                 key={item}
                 onClick={() => handleNavClick(item)}
-                className={`capitalize text-left px-2 py-2 rounded transition-colors ${
-                  activeSection === item ? "text-accent bg-accent/10" : "text-muted-foreground hover:text-foreground"
-                }`}
+                className={`capitalize text-left px-2 py-2 rounded transition-colors ${activeSection === item ? "text-accent bg-accent/10" : "text-muted-foreground hover:text-foreground"
+                  }`}
               >
                 {item}
               </button>
