@@ -1,7 +1,6 @@
 // Projects section showcasing your work
 // Update project titles, descriptions, tags, and links with your own projects
 
-"use client"
 
 import { Github } from "lucide-react"
 import GitHubProjects from "./github-projects"
